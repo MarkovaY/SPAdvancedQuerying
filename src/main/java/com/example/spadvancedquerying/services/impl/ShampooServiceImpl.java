@@ -1,12 +1,15 @@
 package com.example.spadvancedquerying.services.impl;
 
+
 import com.example.spadvancedquerying.entities.Shampoo;
 import com.example.spadvancedquerying.entities.Size;
 import com.example.spadvancedquerying.repositories.ShampooRepository;
 import com.example.spadvancedquerying.services.ShampooService;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
+
 
 @Service
 public class ShampooServiceImpl implements ShampooService {
@@ -18,13 +21,17 @@ public class ShampooServiceImpl implements ShampooService {
     }
 
     @Override
-    public List<Shampoo> findByBrand(String brand) {
-
-        return shampooRepository.findByBrand(brand);
+    public List<Shampoo> findBySize(Size size) {
+        return shampooRepository.findBySizeOrderById(size);
     }
 
     @Override
-    public List<Shampoo> findByBrandAndSize(String brand, Size size) {
-        return shampooRepository.findByBrandAndSize(brand, size);
+    public List<Shampoo> findBySizeOrLabelId(Size size, long labelId) {
+        return shampooRepository.findBySizeOrLabelIdOrderByPrice(size, labelId);
+    }
+
+    @Override
+    public List<Shampoo> findByPriceGreaterThan(BigDecimal price) {
+        return shampooRepository.findByPriceGreaterThanOrderByPriceDesc(price);
     }
 }
