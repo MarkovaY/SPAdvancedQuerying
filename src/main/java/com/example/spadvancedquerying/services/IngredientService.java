@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface IngredientService {
     List<Ingredient> findByNameStartingWith(String letter);
+
+    List<Ingredient> findByNameWithin(List<String> ingredients);
 }

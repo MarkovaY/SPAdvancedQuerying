@@ -6,6 +6,9 @@ import com.example.spadvancedquerying.services.ShampooService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -50,6 +53,18 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
 
 //        List<Ingredient> ingredientsStartingWithLetter = ingredientService.findByNameStartingWith(input);
 //        ingredientsStartingWithLetter.forEach(ingredient -> System.out.printf("%s%n", ingredient.getName()));
+
+//      5. Create a method that selects all ingredients, which are contained in a given list. Sort the result ascending by price.
+
+//        List<Ingredient> ingredientsByNameGiven = ingredientService.findByNameWithin(List.of("Lavender", "Herbs", "Apple"));
+//        ingredientsByNameGiven.forEach(ingredient -> System.out.printf("%s%n", ingredient.getName()));
+
+//      6. Create a method that counts all shampoos with price lower than a given price.
+
+//        double price = Double.parseDouble(input);
+//        int countShampoosCheaperThan = shampooService.countShampooByPriceLessThan(BigDecimal.valueOf(price));
+//        System.out.println(countShampoosCheaperThan);
+
 
     }
 }

@@ -21,4 +21,9 @@ public class IngredientServiceImpl implements IngredientService {
     public List<Ingredient> findByNameStartingWith(String letter) {
         return ingredientRepository.findByNameStartingWith(letter);
     }
+
+    @Override
+    public List<Ingredient> findByNameWithin(List<String> ingredients) {
+        return ingredientRepository.findByNameInOrderByPrice(ingredients);
+    }
 }

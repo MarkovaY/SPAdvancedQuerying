@@ -34,4 +34,9 @@ public class ShampooServiceImpl implements ShampooService {
     public List<Shampoo> findByPriceGreaterThan(BigDecimal price) {
         return shampooRepository.findByPriceGreaterThanOrderByPriceDesc(price);
     }
+
+    @Override
+    public int countShampooByPriceLessThan(BigDecimal price) {
+        return shampooRepository.countShampooByPriceLessThan(price);
+    }
 }
