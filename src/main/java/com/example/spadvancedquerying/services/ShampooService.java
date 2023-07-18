@@ -1,2 +1,5 @@
-package com.example.spadvancedquerying.services;public class ShampooService {
+package com.example.spadvancedquerying.services;
+
+
+public interface ShampooService {
 }

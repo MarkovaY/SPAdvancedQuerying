@@ -5,11 +5,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Runner implements CommandLineRunner {
+public class CommandLineRunnerImpl implements CommandLineRunner {
 
     private ShampooService shampooService;
 
-    public Runner(ShampooService shampooService) {
+    public CommandLineRunnerImpl(ShampooService shampooService) {
         this.shampooService = shampooService;
     }
 

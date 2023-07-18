@@ -1,5 +1,6 @@
-package com.example.advquerying.entities;
-import javax.persistence.*;
+package com.example.spadvancedquerying.entities;
+import jakarta.persistence.*;
+
 import java.math.BigDecimal;
 import java.util.Set;
 

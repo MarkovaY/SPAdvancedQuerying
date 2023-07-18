@@ -1,5 +1,6 @@
-package com.example.advquerying.entities;
-import javax.persistence.*;
+package com.example.spadvancedquerying.entities;
+import jakarta.persistence.*;
+
 import java.math.BigDecimal;
 import java.util.Set;
 
@@ -32,7 +33,8 @@ public class Ingredient extends BaseEntity {
         this.price = price;
     }
 
-    @ManyToMany(mappedBy = "ingredients",
+    @ManyToMany(targetEntity = Shampoo.class,
+            mappedBy = "ingredients",
             fetch = FetchType.EAGER,
             cascade = CascadeType.ALL)
     public Set<Shampoo> getShampoos() {

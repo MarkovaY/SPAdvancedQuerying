@@ -1,6 +1,7 @@
-package com.example.advquerying.entities;
+package com.example.spadvancedquerying.entities;
 
-import javax.persistence.*;
+
+import jakarta.persistence.*;
 
 @MappedSuperclass
 public abstract class BaseEntity {
