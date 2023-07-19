@@ -26,4 +26,6 @@ public interface ShampooRepository extends JpaRepository<Shampoo, Long> {
 
     @Query(value = "SELECT s FROM Shampoo AS s JOIN s.ingredients AS i WHERE i.name IN :ingredientNames")
     List<Shampoo> findByIngredientsNameIn(List<String> ingredientNames);
+
+
 }
