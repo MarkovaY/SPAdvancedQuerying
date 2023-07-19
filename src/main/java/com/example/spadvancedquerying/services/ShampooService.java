@@ -5,6 +5,7 @@ import com.example.spadvancedquerying.entities.Shampoo;
 import com.example.spadvancedquerying.entities.Size;
 
 import java.math.BigDecimal;
+import java.util.HashSet;
 import java.util.List;
 
 public interface ShampooService {
@@ -16,4 +17,6 @@ public interface ShampooService {
     List<Shampoo> findByPriceGreaterThan(BigDecimal price);
 
     int countShampooByPriceLessThan(BigDecimal price);
+
+    List<Shampoo> findAllShampoosWithIngredientsIn(List<String> ingredients);
 }

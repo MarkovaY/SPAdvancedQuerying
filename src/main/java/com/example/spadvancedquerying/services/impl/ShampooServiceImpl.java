@@ -8,6 +8,7 @@ import com.example.spadvancedquerying.services.ShampooService;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.HashSet;
 import java.util.List;
 
 
@@ -38,5 +39,10 @@ public class ShampooServiceImpl implements ShampooService {
     @Override
     public int countShampooByPriceLessThan(BigDecimal price) {
         return shampooRepository.countShampooByPriceLessThan(price);
+    }
+
+    @Override
+    public List<Shampoo> findAllShampoosWithIngredientsIn(List<String> ingredients) {
+        return shampooRepository.findByIngredientsNameIn(ingredients);
     }
 }

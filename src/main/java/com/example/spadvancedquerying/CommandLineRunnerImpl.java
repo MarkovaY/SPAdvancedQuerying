@@ -1,16 +1,14 @@
 package com.example.spadvancedquerying;
 
 import com.example.spadvancedquerying.entities.Ingredient;
+import com.example.spadvancedquerying.entities.Shampoo;
 import com.example.spadvancedquerying.services.IngredientService;
 import com.example.spadvancedquerying.services.ShampooService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 @Component
 public class CommandLineRunnerImpl implements CommandLineRunner {
@@ -28,7 +26,7 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
 
         Scanner scanner = new Scanner(System.in);
 
-        String input = scanner.nextLine();
+//        String input = scanner.nextLine();
 
 //      1. Create a method that selects all shampoos with a given size, ordered by shampoo id.
 
@@ -65,6 +63,9 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
 //        int countShampoosCheaperThan = shampooService.countShampooByPriceLessThan(BigDecimal.valueOf(price));
 //        System.out.println(countShampoosCheaperThan);
 
+//      7. Create a method that selects all shampoos with ingredients included in a given list.
 
+        List<Shampoo> shampoosWithGivenIngredients  = shampooService.findAllShampoosWithIngredientsIn(List.of("Berry", "Mineral-Collagen"));
+        shampoosWithGivenIngredients.forEach(shampoo -> System.out.printf("%s%n", shampoo.getBrand()));
     }
 }
